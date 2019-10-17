@@ -1,0 +1,10 @@
+<!-- templates/users_index.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>users</h1>
+    {% for user in users %}
+        <h2>{{ user.title }}</h2>
+        <small>{{ user.description }}</small>
+    {% endfor %}
+{% endblock %}
