@@ -2,9 +2,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>users</h1>
-    {% for user in users %}
-        <h2>{{ user.title }}</h2>
-        <small>{{ user.description }}</small>
-    {% endfor %}
+<h1>users</h1>
+
+<a href='/users/new'>New user</a>
+
+{% for user in users %}
+    <h2>{{ user.title }}</h2>
+    <small>{{ user.description }}</small>
+{% endfor %}
 {% endblock %}
