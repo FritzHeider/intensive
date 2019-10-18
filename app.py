@@ -8,7 +8,7 @@ host = os.environ.get('MONGODB_URI', 'mongodb://heroku_j31466sd:74ishojt4v09mjpr
 #host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/home')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
-db = client.TinyHomeMe
+#db = client.TinyHomeMe
 users = db.users
 
 
@@ -47,3 +47,9 @@ def users_submit():
     }
     users.insert_one(user)
     return redirect(url_for('users_index'))
+
+
+
+# app.py
+if __name__ == '__main__':
+  app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
