@@ -4,9 +4,9 @@ import os
 from bson.objectid import ObjectId
 from datetime import datetime
 
-
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/home')
-client = MongoClient(host=host)
+host = os.environ.get('MONGODB_URI', 'mongodb://heroku_j31466sd:74ishojt4v09mjpreg0qkhgnf4@ds237308.mlab.com:37308/heroku_j31466sd')
+#host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/home')
+client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
 db = client.TinyHomeMe
 users = db.users
