@@ -13,7 +13,7 @@ users = db.users
 app = Flask(__name__)
 
 # users = [
-#     { 'title': 'Cat Videos', 'email': 'Cats acting weird' },
+#     { 'title': 'Cat phone', 'email': 'Cats acting weird' },
 #     { 'title': '80\'s Music', 'email': 'Don\'t stop believing!' }
 # ]
 
@@ -40,8 +40,8 @@ def users_submit():
     """Submit a new user."""
     user = {
         'title': request.form.get('title'),
-        'email': request.form.get('email'),
-        'videos': request.form.get('videos').split()
+        'description': request.form.get('description'),
+        'phone': request.form.get('phone')
     }
     users.insert_one(user)
     return redirect(url_for('users_index'))

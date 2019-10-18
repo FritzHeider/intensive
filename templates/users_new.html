@@ -5,25 +5,25 @@
 {% block content %}
 <form method='POST' action='/users'>
     <fieldset>
-        <legend>TineHomeMe Application</legend>
+        <legend>TinyHomeMe Application</legend>
         <!-- TITLE -->
         <p>
-            <label for='user-title'>Title</label><br>
+            <label for='user-title'>Full Name</label><br>
             <input id='user-title' type='text' name='title' />
         </p>
 
         <!-- DESCRIPTION -->
         <p>
-            <label for='description'>Description</label><br>
+            <label for='description'>Email</label><br>
             <input id='description' type='text' name='description' />
         </p>
 
         <!-- VIDEO LINKS -->
         <p>
-            <label for='user-videos'>Videos</label><br>
-            <p>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
-            <textarea id='user-videos' name='videos' rows='10'></textarea>
+            <label for='phone'>Phone Number</label><br>
+            <input id='phone' type='text' name='phone' />
         </p>
+
     </fieldset>
 
     <!-- BUTTON -->
@@ -31,4 +31,6 @@
         <button type='submit'>Save user</button>
     </p>
 </form>
+
+<p> Thankyou for your interest in our company, a TinyHomeMe agent will be make contact with you in the next few days to talk about possible soliutions to your tiny home needs </p>
 {% endblock %}
