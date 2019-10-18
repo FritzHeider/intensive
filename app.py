@@ -4,39 +4,36 @@ import os
 from bson.objectid import ObjectId
 from datetime import datetime
 
-host = os.environ.get('MONGODB_URI', 'mongodb://heroku_j31466sd:74ishojt4v09mjpreg0qkhgnf4@ds237308.mlab.com:37308/heroku_j31466sd')
-#host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/home')
+#host = os.environ.get('MONGODB_URI', 'mongodb://heroku_j31466sd:74ishojt4v09mjpreg0qkhgnf4@ds237308.mlab.com:37308/heroku_j31466sd')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/home')
 client = MongoClient(host=f'{host}?retryWrites=false')
 db = client.get_default_database()
-#db = client.TinyHomeMe
+db = client.TinyHomeMe
 users = db.users
 
 
 app = Flask(__name__)
 
-# users = [
-#     { 'title': 'Cat phone', 'email': 'Cats acting weird' },
-#     { 'title': '80\'s Music', 'email': 'Don\'t stop believing!' }
-# ]
-
+#route to list of applications
 @app.route('/admin')
 def users_index():
     """Show all users."""
     return render_template('users_index.html', users=users.find())
 
 
-
+#route to information about TinyHomeMe
 @app.route('/info')
 def info():
     """Show all users."""
     return render_template('home.html')
 
-
+#route to application page
 @app.route('/users/new')
 def users_new():
     """Show all users."""
     return render_template('users_new.html')
 
+#route to post new applications
 @app.route('/users', methods=['POST'])
 def users_submit():
     """Submit a new user."""
