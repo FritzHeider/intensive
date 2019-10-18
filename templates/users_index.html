@@ -8,6 +8,6 @@
 
 {% for user in users %}
     <h2><a href='/users/{{ user._id }}'>{{ user.title }}</a></h2>
-    <small>{{ user.description }}</small>
+    <small>{{ user.email }}</small>
 {% endfor %}
 {% endblock %}

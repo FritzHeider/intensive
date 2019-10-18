@@ -2,23 +2,23 @@
 <legend>{{title}}</legend>
 <!-- NAME -->
 <div class="form-group">
-  <label for="users-name">Name</label><br>
-  <input id="users-name" type="text" name="name" value="{{ users.name }}"/>
+  <label for="user-name">Name</label><br>
+  <input id="user-name" type="text" name="name" value="{{ user.name }}"/>
 </div>
 <!-- PRICE -->
 <div class="form-group">
-  <label for="users-price">Email</label><br>
-  $<input id="users-price" type="text" name="price" value="{{ users.price }}"/>
+  <label for="user-price">Price</label><br>
+  <input id="user-price" type="text" name="price" value="{{ user.price }}"/>
 </div>
 <!-- IMAGE -->
 <div class="form-group">
-  <label for="users-image">Image URL</label><br>
-  <input id="users-image" type="text" name="image" value="{{ users.image }}">
+  <label for="user-image">Image URL</label><br>
+  <input id="user-image" type="text" name="image" value="{{ user.image }}">
 </div>
 </fieldset>
 
 <!-- BUTTON -->
 <div class="form-group">
   <button type="submit" formaction="/" formmethod="GET">Cancel</button>
-  <button type="submit">Save users</button>
+  <button type="submit">Save user</button>
 </div>

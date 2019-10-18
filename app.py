@@ -1,13 +1,35 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
+from pymongo import MongoClient
+import os
+from bson.objectid import ObjectId
+from datetime import datetime
+
+
+client = MongoClient()
+db = client.TinyHomeMe
+users = db.users
+
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    """Return homepage."""
-    return render_template('home.html', msg='Flask is Cool!!')
+users = [
+    { 'title': 'Cat Videos', 'email': 'Cats acting weird' },
+    { 'title': '80\'s Music', 'email': 'Don\'t stop believing!' }
+]
+
+@app.route('/admin')
+def users_index():
+    """Show all users."""
+    return render_template('users_index.html', users=users)
 
 
+@app.route('/info')
+def info():
+    """Show all users."""
+    return render_template('home.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+@app.route('/users/new')
+def users_new():
+    """Show all users."""
+    return render_template('users_new.html')
