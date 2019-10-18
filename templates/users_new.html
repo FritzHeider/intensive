@@ -1,33 +1,13 @@
-<!-- templates/users_new.html -->
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block content %}
-<form method='POST' action='/users'>
-    <fieldset>
-        <legend>New user</legend>
-        <!-- TITLE -->
-        <p>
-            <label for='user-title'>Title</label><br>
-            <input id='user-title' type='text' name='title' />
-        </p>
+{% block title %}New user{% endblock %}
 
-        <!-- DESCRIPTION -->
-        <p>
-            <label for='description'>Description</label><br>
-            <input id='description' type='text' name='description' />
-        </p>
-
-        <!-- VIDEO LINKS -->
-        <p>
-            <label for='user-videos'>Videos</label><br>
-            <p>Add videos in the form of 'https://youtube.com/embed/KEY'. Separate with a newline.</p>
-            <textarea id='user-videos' name='videos' rows='10'></textarea>
-        </p>
-    </fieldset>
-
-    <!-- BUTTON -->
-    <p>
-        <button type='submit'>Save user</button>
-    </p>
-</form>
+{% block body %}
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <form method='POST' action='/users/new'>
+            {% include 'partials/users_form.html' %}
+        </form>
+    </div>
+</div>
 {% endblock %}

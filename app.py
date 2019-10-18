@@ -1,6 +1,9 @@
-
-from pymongo import MongoClient
 from flask import Flask, render_template, request, redirect, url_for
+from pymongo import MongoClient
+import os
+from bson.objectid import ObjectId
+from datetime import datetime
+
 
 client = MongoClient()
 db = client.TinyHomeMe
@@ -15,8 +18,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     """Show all users."""
-    return render_template('home.html', msg='Flask is Cool!!' )
-@app.route('/', methods=['GET'])
+    return render_template('home.html', msg='Tine Home me!' )
 
 
 @app.route('/users', methods=['POST'])
