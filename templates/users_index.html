@@ -7,7 +7,7 @@
 <a href='/users/new'>New user</a>
 
 {% for user in users %}
-    <h2>{{ user.title }}</h2>
+    <h2><a href='/users/{{ user._id }}'>{{ user.title }}</a></h2>
     <small>{{ user.description }}</small>
 {% endfor %}
 {% endblock %}
